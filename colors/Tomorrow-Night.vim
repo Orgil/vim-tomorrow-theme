@@ -1,11 +1,12 @@
 " Tomorrow Night - Full Colour and 256 Colour
 " http://chriskempson.com
+set fillchars+=vert:\|
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
-let s:background = "1d1f21"
+let s:background = "111314"
 let s:selection = "373b41"
 let s:line = "282a2e"
 let s:comment = "969896"
@@ -249,7 +250,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
-	call <SID>X("VertSplit", s:window, s:window, "none")
+	call <SID>X("VertSplit", s:window, s:background, "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
@@ -291,7 +292,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X("vimCommand", s:orange, "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
