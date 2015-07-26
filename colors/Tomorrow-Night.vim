@@ -6,7 +6,7 @@ set fillchars+=vert:\|
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
-let s:background = "111314"
+let s:background = "1d1f21"
 let s:selection = "373b41"
 let s:line = "282a2e"
 let s:comment = "969896"
@@ -243,7 +243,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
-	call <SID>X("LineNr", s:selection, "", "")
+	call <SID>X("LineNr", s:window, s:line, "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
@@ -269,6 +269,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 	if version >= 703
 		call <SID>X("ColorColumn", "", s:line, "none")
+		call <SID>X("CursorLineNr", "", s:line, "none")
 	end
 
 	" Standard Highlighting
@@ -292,7 +293,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", s:orange, "", "none")
+	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X("vimVar", s:orange, "", "none")
+	call <SID>X("vimNumber", s:purple, "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
